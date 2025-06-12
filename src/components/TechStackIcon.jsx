@@ -9,7 +9,7 @@ const TechStackIcon = ({ TechStackIcon, Language }) => {
         alt={`${Language} icon`} 
         className="h-16 w-16 md:h-20 md:w-20 object-contain transition-transform duration-300 group-hover:scale-110"
       />
-      <span className="font-semibold text-base md:text-lg tracking-wide">
+      <span className="text-green-400  font-semibold text-base md:text-lg tracking-wide">
         {Language}
       </span>
     </div>
