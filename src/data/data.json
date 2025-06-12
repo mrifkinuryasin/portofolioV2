@@ -25,6 +25,15 @@
         "Source code presentasi tersedia di GitHub"
       ],
       "category": "Project"
+    },
+    {
+       "id": "3",
+      "Title": "Mobile Water Monitoring ",
+      "Description": "Sistem monitoring kolam berbasis Flutter dan MQTT yang menampilkan data sensor seperti suhu dan pH air secara real-time.",
+      "Img": "./monitoring_kolam.jpg",
+      "Github": "https://github.com/mrifkinuryasin/Monitoring-Kolam-Ikan",
+      "TechStack": ["Firebase", "MQTT", "Flutter"],
+      "category": "Project"
     }
     
   ],
