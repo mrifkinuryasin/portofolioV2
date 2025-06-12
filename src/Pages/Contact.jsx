@@ -83,7 +83,7 @@ const ContactFooter = () => {
 
   const socialLinks = [
     { icon: <AiFillGithub size={28} />, name: "GitHub", href: "https://github.com/mrifkinuryasin" },
-    { icon: <AiFillInstagram size={28} />, name: "Instagram", href: "https://www.instagram.com/kikokhatake/" },
+    { icon: <AiFillInstagram size={28} />, name: "Instagram", href: "https://www.instagram.com/kikokhatake02/" },
     { icon: <AiFillLinkedin size={28} />, name: "LinkedIn", href: "https://www.linkedin.com/in/muhammad-rifki-nuryasin-75272a24a/" },
     // { icon: <AiFillYoutube size={28} />, name: "YouTube", href: "https://youtube.com/@nugra21" },
   ];
@@ -91,9 +91,9 @@ const ContactFooter = () => {
   return (
     <>
       <Helmet>
-        <title>Home M Rifki | Portfolio | By " RF "  </title>
+        <title>Rifki Nuryasin</title>
         <meta name="description" content="Hubungi Ludang Prasetyo Nugroho untuk kolaborasi, pertanyaan, atau sekadar berbagi ide!" />
-        <meta name="keywords" content="Ludang Prasetyo, Rifki, Contact, Kontak, Web Developer, IoT, UI/UX" />
+        <meta name="keywords" content="Rifki Nuryasin, Contact, Kontak, Web Developer, IoT, UI/UX" />
         <meta property="og:title" content="Contact – Rifki" />
         <meta property="og:description" content="Hubungi Ludang Prasetyo Nugroho untuk kolaborasi, pertanyaan, atau sekadar berbagi ide!" />
         <meta property="og:url" content="https://rifki.my.id/contact" />

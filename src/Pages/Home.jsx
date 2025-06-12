@@ -53,9 +53,9 @@ const ERASING_SPEED = 40;
 const PAUSE_DURATION = 1500;
 
 const SOCIAL_LINKS = [
-  { icon: Github, link: "https://github.com/Rifki" },
-  { icon: Linkedin, link: "https://www.linkedin.com/in/rifki" },
-  { icon: Instagram, link: "https://www.instagram.com/rifki" },
+  { icon: Github, link: "https://github.com/mrifkinuryasin" },
+  { icon: Linkedin, link: "https://www.linkedin.com/in/muhammad-rifki-nuryasin-75272a24a/" },
+  { icon: Instagram, link: "https://www.instagram.com/kikokhatake02" },
 ];
 
 // Komponen utama

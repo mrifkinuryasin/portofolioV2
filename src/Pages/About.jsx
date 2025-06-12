@@ -185,7 +185,7 @@ const AboutPage = () => {
                   data-aos-duration="800"
                 >
                   <motion.a
-                    href="rifki-resume.pdf"
+                    href="Muhammad Rifki Nuryasin-resume.pdf"
                     className="w-full sm:w-auto"
                     target="_blank"
                     rel="noreferrer noopener"
