@@ -1,0 +1,272 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* === RESET & GLOBAL === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(16, 185, 129, 0.737) transparent;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  background: #000000;
+  scroll-behavior: smooth !important;
+}
+
+/* === SCROLLBAR STYLE MODERN (Aligned with Theme) === */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(16, 185, 129, 0.4);
+  border-radius: 20px;
+  border: 1px solid rgba(20, 184, 166, 0.2);
+  box-shadow: inset 0 0 20px rgba(16, 185, 129, 0.3);
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(16, 185, 129, 0.6);
+  box-shadow: inset 0 0 30px rgba(20, 184, 166, 0.4);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: rgba(16, 185, 129, 0.8);
+  box-shadow: inset 0 0 40px rgba(20, 184, 166, 0.5);
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* === AOS OPTIMIZATION === */
+[data-aos] {
+  will-change: transform, opacity !important;
+}
+
+/* === KEYFRAMES ANIMASI === */
+@keyframes blob {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes shine {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 200%;
+  }
+}
+
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+
+@keyframes scrollTech {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes sparkle {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* === ANIMASI UTILITY === */
+.animate-blob {
+  animation: blob 8s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+.animate-shine {
+  animation: shine 1.5s ease-in-out infinite;
+}
+
+.animate-sparkle {
+  animation: sparkle 1.5s infinite linear;
+}
+
+@layer utilities {
+  .animate-blink {
+    animation: blink 1s steps(2, start) infinite;
+  }
+}
+
+/* === SCROLLING TECH STACK === */
+.scrolling-tech-wrapper {
+  position: relative;
+  overflow: hidden;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1.5rem 0;
+  background: transparent;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 15%,
+    black 85%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 15%,
+    black 85%,
+    transparent 100%
+  );
+}
+
+.scrolling-tech-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 2rem;
+  animation: scrollTech 20s linear infinite;
+  will-change: transform;
+  user-select: none;
+}
+
+.scrolling-tech-text span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  background: transparent;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 1rem;
+  color: rgba(16, 185, 129, 0.9);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.2);
+}
+
+.scrolling-tech-text span:hover {
+  background: linear-gradient(to right, rgba(16, 185, 129, 0.2), rgba(20, 184, 166, 0.2));
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+/* === LANYARD CONTAINER (Unchanged) === */
+.lanyard-container {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  top: -100px;
+}
+
+/* Extra small screens (xs: ≥360px) */
+@media (min-width: 360px) {
+  .lanyard-container {
+    position: relative;
+    height: 300px;
+    top: -20px;
+  }
+}
+
+/* Small screens (sm: ≥640px) */
+@media (min-width: 640px) {
+  .lanyard-container {
+    position: absolute;
+    height: 350px;
+    top: -10rem;
+  }
+}
+
+/* Medium screens (md: ≥768px) */
+@media (min-width: 768px) {
+  .lanyard-container {
+    position: absolute;
+    height: 400px;
+    top: -10rem;
+  }
+}
+
+/* Large screens (lg: ≥1024px) */
+@media (min-width: 1024px) {
+  .lanyard-container {
+    position: absolute;
+    width: 50%;
+    height: 450px;
+    top: -10rem;
+    right: 2rem;
+  }
+}
+
+/* Extra large screens (xl: ≥1280px) */
+@media (min-width: 1280px) {
+  .lanyard-container {
+    position: absolute;
+    height: 500px;
+    top: -100px;
+    right: 2rem;
+  }
+}
+
+/* Responsive adjustments for scrolling tech stack */
+@media (max-width: 640px) {
+  .scrolling-tech-wrapper {
+    max-width: 100%;
+    padding: 1rem 0;
+  }
+
+  .scrolling-tech-text {
+    gap: 1.5rem;
+  }
+
+  .scrolling-tech-text span {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .scrolling-tech-wrapper {
+    padding: 2rem 0;
+  }
+
+  .scrolling-tech-text {
+    gap: 2.5rem;
+  }
+}

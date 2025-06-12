@@ -1,0 +1,111 @@
+{
+  "projects": [
+    {
+      "id": "1",
+      "Title": "Aplikasi M-banking (BANK SAMPAH)",
+      "Description": "Aplikasi mobile monitoring kolam ikan berbasis Flutter yang terhubung dengan ESP32 menggunakan protokol MQTT. Data sensor dari 3 kolam dikirim secara real-time ke aplikasi melalui broker MQTT dan disimpan di Firebase. Aplikasi menampilkan suhu, pH, DO, dan status kolam dalam tampilan dashboard interaktif. Cocok untuk pemantauan budidaya ikan lele secara digital dan efisien.",
+      "Img": "https://github.com/Nugraa21/Nugra21/blob/main/src/images/apk1.jpg?raw=true",
+      "Github": "https://github.com/Nugraa21/iot_kolam_ikan.git",
+      "TechStack": ["Flutter", "MQTT", "ESP32", "Dart", "Firebase"],
+      "Features": ["Transaksi sesama","nenudah kan untuk Transparansi transaksi bank sampah","Monitoring kompose", "Real-time MQTT data", "Modern UI crypto-style"],
+      "category": "Project"
+    },
+    {
+      "id": "2",
+      "Title": "PPT ITIL Menggunakan LaTeX",
+      "Description": "Proyek pembuatan presentasi mengenai ITIL (Information Technology Infrastructure Library) menggunakan LaTeX. Materi membahas dasar-dasar ITIL dan disusun dalam format presentasi profesional dengan bantuan template LaTeX Beamer.",
+      "Img": "https://github.com/Nugraa21/Nugra21/blob/main/src/images/PPTLTX.png?raw=true",
+      "Link": "https://github.com/Nugraa21/PPT-ITIL-LaTeX.git",
+      "Github": "https://github.com/Nugraa21/PPT-ITIL-LaTeX.git",
+      "TechStack": ["LaTeX", "Beamer", "Overlive"],
+      "Features": [
+        "Presentasi profesional dengan LaTeX Beamer",
+        "Pembahasan konsep ITIL (Information Technology Infrastructure Library)",
+        "Struktur slide yang sistematis dan informatif",
+        "Source code presentasi tersedia di GitHub"
+      ],
+      "category": "Project"
+    },
+    {
+      "id": "3",
+      "Title": "PPT Pendiri Tokopedia & Kisah Suksesnya",
+      "Description": "Materi presentasi yang membahas profil pendiri Tokopedia, perjalanan bisnis, dan kisah sukses Tokopedia sebagai salah satu startup e-commerce terbesar di Indonesia.",
+      "Img": "https://github.com/Nugraa21/Nugra21/blob/main/src/images/m3.png?raw=true",
+      "Link": "./PDF/TOKPET.pdf",
+      "TechStack": ["Presentasi", "Bisnis", "Startup"],
+      "Features": [
+        "Profil pendiri Tokopedia",
+        "Perjalanan dan strategi bisnis",
+        "Kisah sukses dan pelajaran berharga",
+        "Analisis dampak Tokopedia di Indonesia"
+      ],
+      "category": "Materi"
+    }
+  ],
+  "certificates": [
+    {
+      "Img": "./CTF/c1.png",
+      "title": "Certificate",
+      "description": "--",
+      "issuer": "Dicoding Indonesia",
+      "date": "June 2025",
+      "Link": "--" 
+    },
+    {
+      "Img": "./CTF/c2.png",
+      "title": "Certificate",
+      "description": "--",
+      "issuer": "Dicoding Indonesia",
+      "date": "June 2025",
+      "Link": "--" 
+    },
+    {
+      "Img": "./CTF/c3.png",
+      "title": "Certificate",
+      "description": "--",
+      "issuer": "Dicoding Indonesia",
+      "date": "June 2025",
+      "Link": "--" 
+    },
+    {
+      "Img": "./CTF/c4.png",
+      "title": "Certificate",
+      "description": "--",
+      "issuer": "Dicoding Indonesia",
+      "date": "June 2025",
+      "Link": "--" 
+    },
+    {
+      "Img": "./CTF/c5.png",
+      "title": "Certificate",
+      "description": "--",
+      "issuer": "Dicoding Indonesia",
+      "date": "June 2025",
+      "Link": "--" 
+    },
+    {
+      "Img": "./CTF/c6.png",
+      "title": "Certificate",
+      "description": "--",
+      "issuer": "Dicoding Indonesia",
+      "date": "June 2025",
+      "Link": "--" 
+    },
+    {
+      "Img": "./CTF/c7.png",
+      "title": "Certificate",
+      "description": "--",
+      "issuer": "Dicoding Indonesia",
+      "date": "June 2025",
+      "Link": "--" 
+    },
+    {
+      "Img": "./CTF/c8.png",
+      "title": "Certificate",
+      "description": "--",
+      "issuer": "Dicoding Indonesia",
+      "date": "June 2025",
+      "Link": "--" 
+    }
+  ]
+}

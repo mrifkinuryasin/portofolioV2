@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://rifki.my.id/sitemap.xml
