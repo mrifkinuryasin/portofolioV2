@@ -13,17 +13,17 @@ const CardProject = ({ Img, Title, Description, Link: ProjectLink, id }) => {
       e.preventDefault();
       Swal.fire({
         icon: "info",
-        title: "Live Demo Not Available",
+        title: "Live Demo Tidak Tersedia",
         text: "Maaf, link live demo untuk proyek ini tidak tersedia.",
         confirmButtonText: "Mengerti",
         confirmButtonColor: "#10b981",
-        background: "#1f2937",
+        background: "linear-gradient(135deg, #111827, #1f2937)",
         color: "#d1d5db",
         customClass: {
-          popup: "rounded-xl shadow-2xl",
+          popup: "rounded-xl border-2 border-green-600/50 shadow-[0_0_15px_rgba(16,185,129,0.5)]",
           title: "font-bold text-xl text-green-400",
-          content: "text-sm text-green-400/90",
-          confirmButton: "px-6 py-2 text-sm font-semibold rounded-lg bg-gradient-to-r from-green-500 to-teal-400 text-gray-900",
+          content: "text-sm text-green-300/90",
+          confirmButton: "px-6 py-2 text-sm font-semibold rounded-lg bg-gradient-to-r from-green-500 to-teal-400 text-gray-900 hover:shadow-[0_0_20px_#10b981]",
         },
       });
     }
@@ -35,17 +35,17 @@ const CardProject = ({ Img, Title, Description, Link: ProjectLink, id }) => {
       e.preventDefault();
       Swal.fire({
         icon: "info",
-        title: "Details Not Available",
+        title: "Detail Tidak Tersedia",
         text: "Maaf, detail untuk proyek ini tidak tersedia.",
         confirmButtonText: "Mengerti",
         confirmButtonColor: "#10b981",
-        background: "#1f2937",
+        background: "linear-gradient(135deg, #111827, #1f2937)",
         color: "#d1d5db",
         customClass: {
-          popup: "rounded-xl shadow-2xl",
+          popup: "rounded-xl border-2 border-green-600/50 shadow-[0_0_15px_rgba(16,185,129,0.5)]",
           title: "font-bold text-xl text-green-400",
-          content: "text-sm text-green-400/90",
-          confirmButton: "px-6 py-2 text-sm font-semibold rounded-lg bg-gradient-to-r from-green-500 to-teal-400 text-gray-900",
+          content: "text-sm text-green-300/90",
+          confirmButton: "px-6 py-2 text-sm font-semibold rounded-lg bg-gradient-to-r from-green-500 to-teal-400 text-gray-900 hover:shadow-[0_0_20px_#10b981]",
         },
       });
     }
@@ -53,23 +53,24 @@ const CardProject = ({ Img, Title, Description, Link: ProjectLink, id }) => {
 
   return (
     <motion.div
-      className="relative w-full max-w-[300px] sm:max-w-[340px] mx-auto bg-gray-900/60 rounded-xl border border-green-600/30"
-      whileHover={{ scale: 1.05, rotateY: 5 }}
-      transition={{ duration: 0.3, ease: "easeOut" }}
+      className="relative w-full max-w-[320px] sm:max-w-[360px] mx-auto bg-gray-900/60 rounded-2xl border border-green-600/40 backdrop-blur-sm shadow-lg overflow-hidden"
+      whileHover={{ scale: 1.05, rotateY: 3, boxShadow: "0 10px 24px rgba(16, 185, 129, 0.5)" }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
       data-aos="fade-up"
+      data-aos-duration="800"
       tabIndex={0}
       role="group"
       aria-label={`Proyek: ${Title}`}
     >
       {/* Image Section with Loading Effect */}
-      <div className="relative overflow-hidden rounded-t-xl">
+      <div className="relative overflow-hidden rounded-t-2xl">
         {!isImageLoaded && (
-          <div className="w-full h-40 sm:h-48 bg-gray-700/50 animate-pulse" />
+          <div className="w-full h-48 sm:h-56 bg-gray-800/50 animate-pulse rounded-t-2xl" />
         )}
         <img
           src={Img}
           alt={Title}
-          className={`w-full h-40 sm:h-48 object-cover transition-all duration-500 ${isImageLoaded ? "opacity-100" : "opacity-0"}`}
+          className={`w-full h-48 sm:h-56 object-cover transition-all duration-500 ${isImageLoaded ? "opacity-100" : "opacity-0"}`}
           loading="lazy"
           onLoad={() => setIsImageLoaded(true)}
           onError={(e) => {
@@ -78,63 +79,72 @@ const CardProject = ({ Img, Title, Description, Link: ProjectLink, id }) => {
             setIsImageLoaded(true);
           }}
         />
-        <div className="absolute inset-0 bg-green-600/10 transition-all duration-500 hover:bg-green-600/20 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
       </div>
 
       {/* Content Section */}
-      <div className="p-4 sm:p-5 flex flex-col h-full">
-        <h3 className="text-lg font-bold text-green-400 mb-1 line-clamp-1">
+      <div className="p-5 sm:p-6 flex flex-col h-full">
+        <h3 className="text-lg sm:text-xl font-bold text-green-300 mb-2 line-clamp-1">
           {Title}
         </h3>
-        <p className="text-xs text-green-400/90 leading-relaxed line-clamp-3 flex-grow">
+        <p className="text-sm text-green-300/80 leading-relaxed line-clamp-3 flex-grow">
           {Description}
         </p>
 
         {/* Buttons */}
-        <div className="pt-3 flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-3 mt-auto">
+        <div className="pt-4 flex flex-col sm:flex-row items-center justify-between gap-3 mt-auto">
           {ProjectLink ? (
-            <a
+            <motion.a
               href={ProjectLink}
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleLiveDemo}
-              className="relative flex items-center gap-1.5 px-4 py-2 bg-gradient-to-r from-green-500 to-teal-400 text-gray-900 rounded-lg font-semibold text-xs hover:shadow-lg hover:shadow-green-500/50 transition-all duration-300 active:scale-95 w-full sm:w-auto"
+              className="relative flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-green-500 to-teal-400 text-gray-900 rounded-lg font-semibold text-sm hover:shadow-[0_8px_20px_rgba(16,185,129,0.5)] transition-all duration-300 w-full sm:w-auto"
               aria-label="Live Demo"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               <motion.div
                 className="absolute -left-4 top-1/2 transform -translate-y-1/2 bg-gradient-to-r from-green-500 to-teal-400 p-1.5 rounded-full"
                 animate={{ rotate: [0, 360] }}
                 transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
               >
-                <ExternalLink className="w-3 h-3 text-gray-900" />
+                <ExternalLink className="w-4 h-4 text-gray-900" />
               </motion.div>
-              <span>Kunjungi</span>
-            </a>
+              Kunjungi
+            </motion.a>
           ) : (
-            <span className="text-green-400/70 font-medium text-xs bg-gray-800/50 px-4 py-2 rounded-lg w-full sm:w-auto text-center">
-              Demo Not Available
+            <span className="text-green-300/70 font-medium text-sm bg-gray-800/50 px-5 py-2.5 rounded-lg w-full sm:w-auto text-center">
+              Demo Tidak Tersedia
             </span>
           )}
 
           {id ? (
-            <Link
-              to={`/project/${id}`}
-              onClick={handleDetails}
-              className="relative flex items-center gap-1.5 px-4 py-2 bg-gray-900/60 border border-green-600/30 text-green-400 rounded-lg font-semibold text-xs hover:bg-gradient-to-r hover:from-green-500 hover:to-teal-400 hover:text-gray-900 hover:shadow-lg hover:shadow-green-500/50 transition-all duration-300 active:scale-95 w-full sm:w-auto"
+            <motion.div
+              className="relative flex items-center gap-2 px-5 py-2.5 bg-gray-900/60 border border-green-600/40 text-green-300 rounded-lg font-semibold text-sm hover:bg-gradient-to-r hover:from-green-500 hover:to-teal-400 hover:text-gray-900 hover:shadow-[0_8px_20px_rgba(16,185,129,0.5)] transition-all duration-300 w-full sm:w-auto"
               aria-label="Project Details"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               <motion.div
                 className="absolute -left-4 top-1/2 transform -translate-y-1/2 bg-gradient-to-r from-green-500 to-teal-400 p-1.5 rounded-full"
                 animate={{ rotate: [0, 360] }}
                 transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
               >
-                <ArrowRight className="w-3 h-3 text-gray-900" />
+                <ArrowRight className="w-4 h-4 text-gray-900" />
               </motion.div>
-              <span>Details</span>
-            </Link>
+              <Link
+                to={`/project/${id}`}
+                onClick={handleDetails}
+                className="w-full"
+                aria-label="Project Details"
+              >
+                Details
+              </Link>
+            </motion.div>
           ) : (
-            <span className="text-green-400/70 font-medium text-xs bg-gray-800/50 px-4 py-2 rounded-lg w-full sm:w-auto text-center">
-              Details Not Available
+            <span className="text-green-300/70 font-medium text-sm bg-gray-800/50 px-5 py-2.5 rounded-lg w-full sm:w-auto text-center">
+              Detail Tidak Tersedia
             </span>
           )}
         </div>
@@ -149,20 +159,20 @@ const CardProject = ({ Img, Title, Description, Link: ProjectLink, id }) => {
           50% { opacity: 0.5; }
         }
         @media (max-width: 640px) {
-          .max-w-\[300px\] {
+          .max-w-\[320px\] {
             max-width: 100%;
           }
           .text-lg {
             font-size: 1rem;
           }
-          .text-xs {
+          .text-sm {
             font-size: 0.75rem;
           }
-          .p-4 {
+          .p-5 {
             padding: 1rem;
           }
-          .h-40 {
-            height: 8rem;
+          .h-48 {
+            height: 10rem;
           }
         }
       `}</style>
