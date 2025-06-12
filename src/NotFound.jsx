@@ -64,7 +64,7 @@ const NotFound = () => {
         </div>
 
         <motion.div
-          className="relative z-10 max-w-2xl mx-auto text-center bg-gray-900/60 border border-green-600/40 rounded-2xl backdrop-blur-md p-6 sm:p-10 shadow-[0_6px_24px_rgba(16,185,129,0.5)]"
+          className="relative z-10 max-w-2xl mx-auto text-center  rounded-2xl backdrop-blur-md p-6 sm:p-10 "
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
