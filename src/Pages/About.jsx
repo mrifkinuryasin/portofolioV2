@@ -1,5 +1,5 @@
 import React, { useEffect, memo, useState } from "react";
-import { FileText, Code2, Shield, Layout, Cpu } from "lucide-react";
+import { FileText, Code2, Shield, Cpu } from "lucide-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Helmet } from "react-helmet";
@@ -7,25 +7,25 @@ import { motion } from "framer-motion";
 
 const Header = memo(() => (
   <motion.div
-    className="text-center mb-6 xs:mb-8 sm:mb-10 px-2 xs:px-4 sm:px-6"
+    className="text-center mb-8 xs:mb-10 sm:mb-12 px-4 sm:px-6 md:px-8"
     initial={{ opacity: 0, y: -20 }}
     animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.6, ease: "easeOut" }}
+    transition={{ duration: 0.8, ease: "easeOut" }}
   >
     <div className="inline-block relative group">
       <h2
-        className="text-3xl xs:text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-teal-400 tracking-wide"
+        className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-teal-300 tracking-tight"
         data-aos="fade-down"
-        data-aos-duration="600"
+        data-aos-duration="800"
       >
         About Me
       </h2>
-      <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-green-500 to-teal-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+      <div className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-green-400 to-teal-300 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out" />
     </div>
     <p
-      className="mt-3 xs:mt-4 text-green-400/90 max-w-3xl mx-auto text-base xs:text-lg sm:text-xl flex items-center justify-center gap-2 xs:gap-3 font-semibold"
+      className="mt-4 xs:mt-5 text-green-300/80 max-w-3xl mx-auto text-base xs:text-lg sm:text-xl lg:text-2xl font-semibold flex items-center justify-center gap-3"
       data-aos="fade-down"
-      data-aos-duration="800"
+      data-aos-duration="1000"
       aria-hidden="true"
     >
       Tentang saya ..?
@@ -34,8 +34,8 @@ const Header = memo(() => (
 ));
 
 const LoadingSkeleton = () => (
-  <div className="animate-pulse bg-transparent rounded-xl w-full max-w-[280px] xs:max-w-[320px] h-[300px] xs:h-[340px] mx-auto">
-    <div className="w-full h-full bg-gray-800/50 rounded-xl" />
+  <div className="animate-pulse bg-transparent rounded-2xl w-full max-w-[300px] xs:max-w-[340px] sm:max-w-[380px] h-[320px] xs:h-[360px] mx-auto">
+    <div className="w-full h-full bg-gray-900/50 rounded-2xl" />
   </div>
 );
 
@@ -51,32 +51,32 @@ const ProfileImage = () => {
 
   return (
     <motion.div
-      className="relative w-full max-w-[280px] xs:max-w-[320px] sm:max-w-[360px] overflow-hidden rounded-xl border border-green-600/30 mx-auto"
+      className="relative w-full max-w-[300px] xs:max-w-[340px] sm:max-w-[380px] overflow-hidden rounded-2xl border border-green-600/40 mx-auto shadow-xl"
       data-aos="fade-right"
-      data-aos-duration="1000"
+      data-aos-duration="1200"
       aria-label="Profile Image of Rifki"
       whileHover={{ scale: 1.05, rotateY: 5 }}
-      transition={{ duration: 0.3, ease: "easeOut" }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
     >
       <img
         src="rifki.jpg"
         alt="Rifki"
-        className="w-full h-[300px] xs:h-[340px] object-cover transition-opacity duration-500 ease-in-out"
+        className="w-full h-[320px] xs:h-[360px] object-cover transition-opacity duration-500 ease-in-out"
         loading="lazy"
         onError={(e) => {
           console.error("Failed to load image: rifki.jpg");
           e.currentTarget.src = "/rf.png";
         }}
       />
-      <div className="absolute inset-0 bg-green-600/10 transition-all duration-500 hover:bg-green-600/20 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-tr from-green-500/20 to-teal-400/20 opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
     </motion.div>
   );
 };
 
 const Chip = ({ text }) => (
   <motion.span
-    className="inline-block bg-gray-800/60 border border-green-600/30 text-green-400/90 text-[10px] xs:text-xs font-semibold px-2 xs:px-3 py-0.5 xs:py-1 rounded-full mr-1 xs:mr-2 mb-1 xs:mb-2 shadow-sm select-none"
-    whileHover={{ scale: 1.1, backgroundColor: "rgba(20, 184, 166, 0.2)" }}
+    className="inline-block bg-gray-900/60 backdrop-blur-sm border border-green-600/40 text-green-300/90 text-xs xs:text-sm font-semibold px-3 py-1 rounded-full mr-2 mb-2 shadow-sm select-none"
+    whileHover={{ scale: 1.1, backgroundColor: "rgba(20, 184, 166, 0.3)" }}
     transition={{ duration: 0.2 }}
   >
     {text}
@@ -85,25 +85,25 @@ const Chip = ({ text }) => (
 
 const SkillCard = ({ icon: Icon, title, description, tools = [], delay }) => (
   <motion.div
-    className="flex flex-col items-center text-center bg-transparent rounded-xl border border-green-600/30 p-4 xs:p-5 transition-all duration-300 hover:shadow-[0_8px_20px_rgba(16,185,129,0.5)]"
+    className="flex flex-col items-center text-center bg-gray-900/20 backdrop-blur-sm rounded-xl border border-green-600/40 p-5 transition-all duration-300 hover:shadow-[0_10px_24px_rgba(16,185,129,0.5)]"
     data-aos="fade-up"
     data-aos-delay={delay}
     role="group"
     tabIndex={0}
     aria-label={`${title} skill`}
     whileHover={{ scale: 1.05, rotateY: 3 }}
-    transition={{ duration: 0.3, ease: "easeOut" }}
+    transition={{ duration: 0.4, ease: "easeOut" }}
   >
     <motion.div
-      className="bg-gradient-to-r from-green-500 to-teal-400 text-gray-900 p-2 xs:p-3 rounded-full mb-2 xs:mb-3 flex items-center justify-center"
+      className="bg-gradient-to-r from-green-500 to-teal-400 text-gray-900 p-3 rounded-full mb-3 flex items-center justify-center"
       animate={{ rotate: [0, 360] }}
       transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
     >
-      <Icon className="w-6 xs:w-8 sm:w-10 h-6 xs:h-8 sm:h-10" aria-hidden="true" />
+      <Icon className="w-8 xs:w-10 sm:w-12 h-8 xs:h-10 sm:h-12" aria-hidden="true" />
     </motion.div>
-    <h3 className="text-base xs:text-lg sm:text-xl font-bold text-green-400 mb-1 xs:mb-2">{title}</h3>
-    <p className="text-xs xs:text-sm text-green-400/90 mb-2 xs:mb-3 max-w-xs leading-relaxed">{description}</p>
-    <div className="flex flex-wrap justify-center gap-1 xs:gap-2 max-w-full">
+    <h3 className="text-lg xs:text-xl sm:text-2xl font-bold text-green-300 mb-2">{title}</h3>
+    <p className="text-sm xs:text-base text-green-300/80 mb-3 max-w-xs leading-relaxed">{description}</p>
+    <div className="flex flex-wrap justify-center gap-2 max-w-full">
       {tools.map((tool) => (
         <Chip key={tool} text={tool} />
       ))}
@@ -135,7 +135,7 @@ const AboutPage = () => {
       <Helmet>
         <title>About – Rifki.my.id</title>
         <meta name="description" content="Tentang Rifki dan perjalanan profesionalnya." />
-        <meta name="keywords" content="Rifki, Portfolio, Web Developer, Cybersecurity, Tent continuanceang Saya" />
+        <meta name="keywords" content="Rifki, Portfolio, Web Developer, Cybersecurity, Tentang Saya" />
         <meta property="og:title" content="About – Rifki.my.id" />
         <meta property="og:description" content="Tentang Rifki dan perjalanan profesionalnya." />
         <meta property="og:url" content="https://rifki.my.id/about" />
@@ -144,17 +144,17 @@ const AboutPage = () => {
       </Helmet>
 
       <section
-        className="min-h-screen text-green-400 bg-transparent overflow-hidden px-2 xs:px-4 sm:px-6 md:px-8 lg:px-12 pt-16 xs:pt-20 sm:pt-24 pb-10 sm:pb-12 relative"
+        className="min-h-screen text-green-400  overflow-hidden px-4 sm:px-6 md:px-8 lg:px-12 pt-20 sm:pt-24 pb-12 relative"
         id="About"
       >
         <div className="max-w-7xl w-full mx-auto">
           <Header />
 
-          <div className="pt-8 xs:pt-10 sm:pt-14">
-            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 xs:gap-8 sm:gap-12 md:gap-16 lg:gap-20 items-center">
+          <div className="pt-10 sm:pt-14">
+            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 sm:gap-12 md:gap-16 lg:gap-20 items-center">
               <ProfileImage />
               <motion.div
-                className="space-y-4 xs:space-y-6 sm:space-y-8 text-left"
+                className="space-y-6 sm:space-y-8 text-left"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
@@ -162,27 +162,27 @@ const AboutPage = () => {
                 <h2
                   className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight"
                   data-aos="fade-left"
-                  data-aos-duration="1000"
+                  data-aos-duration="1200"
                 >
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-teal-400">Hello, I'm</span>
-                  <span className="block mt-1 xs:mt-2 text-green-400/90" data-aos="fade-left" data-aos-duration="1300">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-teal-300">Hello, I'm</span>
+                  <span className="block mt-2 text-green-300/90" data-aos="fade-left" data-aos-duration="1400">
                     Rifki
                   </span>
                 </h2>
                 <p
-                  className="indent-8 text-sm xs:text-base sm:text-lg md:text-xl text-green-400/90 leading-relaxed text-justify"
+                  className="indent-8 text-sm xs:text-base sm:text-lg md:text-xl text-green-300/80 leading-relaxed text-justify"
                   data-aos="fade-left"
-                  data-aos-duration="1500"
+                  data-aos-duration="1600"
                 >
                   Halo, saya Muhammad Rifki Nuryasin — mahasiswa tingkat akhir Teknik Komputer di Universitas Teknologi Digital Indonesia (UTDI) 
-                   memiliki ketertarikan kuat pada IoT, pengembangan aplikasi mobile, dan sistem data real-time.Saya juga memiliki minat yang besar 
-                    di bidang cybersecurity, khususnya pada Digital Forensic, serta tertarik pada pengembangan frontend. Saya percaya bahwa teknologi 
-                     harus mampu menyederhanakan sistem yang kompleks, aman digunakan, dan memberikan nilai nyata bagi penggunanya.
+                  memiliki ketertarikan kuat pada IoT, pengembangan aplikasi mobile, dan sistem data real-time. Saya juga memiliki minat yang besar 
+                  di bidang cybersecurity, khususnya pada Digital Forensic, serta tertarik pada pengembangan frontend. Saya percaya bahwa teknologi 
+                  harus mampu menyederhanakan sistem yang kompleks, aman digunakan, dan memberikan nilai nyata bagi penggunanya.
                 </p>
                 <div
-                  className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 xs:gap-4 sm:gap-6 mt-3 xs:mt-4"
+                  className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-6 mt-4"
                   data-aos="fade-up"
-                  data-aos-duration="800"
+                  data-aos-duration="1000"
                 >
                   <motion.a
                     href="Muhammad Rifki Nuryasin-resume.pdf"
@@ -194,14 +194,14 @@ const AboutPage = () => {
                     transition={{ duration: 0.3 }}
                   >
                     <button
-                      className="relative w-full sm:w-auto px-6 xs:px-8 py-2 xs:py-3 rounded-xl bg-gradient-to-r from-green-500 to-teal-400 text-gray-900 font-semibold transition-all duration-300 hover:shadow-[0_6px_16px_rgba(16,185,129,0.5)] flex items-center justify-center gap-2 xs:gap-3"
+                      className="relative w-full sm:w-auto px-8 py-3 rounded-xl bg-gradient-to-r from-green-500 to-teal-400 text-gray-900 font-semibold transition-all duration-300 hover:shadow-[0_8px_20px_rgba(16,185,129,0.5)] flex items-center justify-center gap-3"
                     >
                       <motion.span
                         className="absolute -left-4 top-1/2 transform -translate-y-1/2 bg-gradient-to-r from-green-500 to-teal-400 p-1.5 rounded-full"
                         animate={{ rotate: [0, 360] }}
                         transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
                       >
-                        <FileText className="w-3 h-3 text-gray-900" />
+                        <FileText className="w-4 h-4 text-gray-900" />
                       </motion.span>
                       Download CV
                     </button>
@@ -214,16 +214,16 @@ const AboutPage = () => {
                     transition={{ duration: 0.3 }}
                   >
                     <button
-                      className="relative w-full sm:w-auto px-6 xs:px-8 py-2 xs:py-3 rounded-xl border border-green-600/30 text-green-400 font-semibold transition-all duration-300 hover:bg-gradient-to-r hover:from-green-500 hover:to-teal-400 hover:text-gray-900 hover:shadow-[0_6px_16px_rgba(16,185,129,0.5)] flex items-center justify-center gap-2 xs:gap-3"
+                      className="relative w-full sm:w-auto px-8 py-3 rounded-xl border border-green-600/40 text-green-300 font-semibold transition-all duration-300 hover:bg-gradient-to-r hover:from-green-500 hover:to-teal-400 hover:text-gray-900 hover:shadow-[0_8px_20px_rgba(16,185,129,0.5)] flex items-center justify-center gap-3"
                       data-aos="fade-up"
-                      data-aos-duration="1000"
+                      data-aos-duration="1200"
                     >
                       <motion.span
                         className="absolute -left-4 top-1/2 transform -translate-y-1/2 bg-gradient-to-r from-green-500 to-teal-400 p-1.5 rounded-full"
                         animate={{ rotate: [0, 360] }}
                         transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
                       >
-                        <Code2 className="w-3 h-3 text-gray-900" />
+                        <Code2 className="w-4 h-4 text-gray-900" />
                       </motion.span>
                       View Projects
                     </button>
@@ -232,37 +232,37 @@ const AboutPage = () => {
               </motion.div>
             </div>
 
-            <div id="Skils" className="mt-16 xs:mt-20 sm:mt-24">
-              <div className="text-center mb-8 xs:mb-10 sm:mb-12">
+            <div id="Skills" className="mt-20 sm:mt-24 lg:mt-28">
+              <div className="text-center mb-10 sm:mb-12">
                 <h3
-                  className="text-3xl xs:text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-teal-400"
+                  className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-teal-300"
                   data-aos="fade-up"
-                  data-aos-duration="800"
+                  data-aos-duration="1000"
                 >
                   My Skills
                 </h3>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 xs:gap-8 sm:gap-10 px-2 xs:px-4 sm:px-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 px-4 sm:px-8">
                 <SkillCard
                   icon={Code2}
                   title="Programming"
                   description="Expertise in multiple programming languages and algorithms."
                   tools={["JavaScript", "Python", "C++", "HTML", "CSS"]}
-                  delay={100}
+                  delay={200}
                 />
                 <SkillCard
                   icon={Shield}
                   title="Cybersecurity"
                   description="Skilled in securing systems and analyzing digital threats."
                   tools={["Wireshark", "Metasploit", "Kali Linux", "Nmap"]}
-                  delay={300}
+                  delay={400}
                 />
                 <SkillCard
                   icon={Cpu}
                   title="IoT & Robotics"
                   description="Experience building and programming IoT devices and robots."
                   tools={["ESP32", "Arduino", "MQTT"]}
-                  delay={700}
+                  delay={600}
                 />
               </div>
             </div>
@@ -278,7 +278,7 @@ const AboutPage = () => {
             50% { opacity: 0.5; }
           }
           @media (max-width: 640px) {
-            .max-w-\[280px\] {
+            .max-w-\[300px\] {
               max-width: 100%;
             }
             .text-3xl {
@@ -296,7 +296,7 @@ const AboutPage = () => {
             .text-xs {
               font-size: 0.75rem;
             }
-            .px-2 {
+            .px-4 {
               padding-left: 0.5rem;
               padding-right: 0.5rem;
             }

@@ -45,35 +45,35 @@ const LandingPage = ({ showWelcome, setShowWelcome }) => {
           </main>
 
           {/* Footer */}
-          <footer className="border-t-4 border-green-600/30 mt-12 xs:mt-16 px-4 sm:px-8 lg:px-16 py-8 bg-transparent text-green-400/90 text-xs sm:text-sm font-medium">
-            <div className="max-w-7xl mx-auto w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 bg-transparent rounded-xl border border-green-600/30 p-6 sm:p-8 shadow-[0_2px_8px_rgba(16,185,129,0.2)]">
+          <footer className="mt-12 xs:mt-16 px-4 sm:px-8 lg:px-16 py-12 bg-black/80 backdrop-blur-lg text-green-400/90 font-medium">
+            <div className="max-w-7xl mx-auto w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 bg-gradient-to-r from-green-900/20 to-teal-900/20 rounded-2xl border border-green-600/40 p-8 sm:p-10 shadow-[0_4px_20px_rgba(16,185,129,0.3)]">
               {/* Kolom 1 */}
-              <div>
+              <div className="space-y-4">
                 <motion.h3
-                  className="text-green-400 text-lg sm:text-xl font-bold mb-4 flex items-center gap-2"
+                  className="text-green-400 text-lg sm:text-xl font-bold flex items-center gap-3"
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6 }}
                 >
-                  <Code2 className="w-5 sm:w-6 h-5 sm:h-6" />
+                  <Code2 className="w-6 h-6 text-teal-400" />
                   Motivasi Hari Ini
                 </motion.h3>
-                <p className="text-sm sm:text-base leading-relaxed">
+                <p className="text-sm sm:text-base text-green-400/70 leading-relaxed">
                   "Hidup untuk memberi arti, bukan sekadar eksistensi."
                 </p>
               </div>
               {/* Kolom 2 */}
-              <div>
+              <div className="space-y-4">
                 <motion.h3
-                  className="text-green-400 text-lg sm:text-xl font-bold mb-4 flex items-center gap-2"
+                  className="text-green-400 text-lg sm:text-xl font-bold flex items-center gap-3"
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                 >
-                  <Code2 className="w-5 sm:w-6 h-5 sm:h-6" />
+                  <Code2 className="w-6 h-6 text-teal-400" />
                   Sedang Kupelajari
                 </motion.h3>
-                <ul className="space-y-2">
+                <ul className="space-y-3">
                   {[
                     { text: "Cybersecurity", href: "/about" },
                     { text: "IoT dengan ESP32", href: "/about" },
@@ -86,26 +86,27 @@ const LandingPage = ({ showWelcome, setShowWelcome }) => {
                     >
                       <a
                         href={item.href}
-                        className="text-green-400/90 hover:text-green-400 transition-colors flex items-center gap-2 hover:shadow-[0_0_10px_rgba(16,185,129,0.3)]"
+                        className="text-green-400/80 hover:text-green-300 transition-colors duration-300 flex items-center gap-2 group"
                       >
-                        <span className="text-green-400">•</span> {item.text}
+                        <span className="text-teal-400 group-hover:text-teal-300 transition-colors duration-300">•</span>
+                        {item.text}
                       </a>
                     </motion.li>
                   ))}
                 </ul>
               </div>
               {/* Kolom 3 */}
-              <div>
+              <div className="space-y-4">
                 <motion.h3
-                  className="text-green-400 text-lg sm:text-xl font-bold mb-4 flex items-center gap-2"
+                  className="text-green-400 text-lg sm:text-xl font-bold flex items-center gap-3"
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.4 }}
                 >
-                  <Code2 className="w-5 sm:w-6 h-5 sm:h-6" />
+                  <Code2 className="w-6 h-6 text-teal-400" />
                   Hubungi Saya
                 </motion.h3>
-                <ul className="space-y-2">
+                <ul className="space-y-3">
                   {[
                     { icon: Github, text: "github.com/rifki", href: "https://github.com/mrifkinuryasin" },
                     { icon: Linkedin, text: "linkedin.com/in/rifki", href: "https://www.linkedin.com/in/muhammad-rifki-nuryasin-75272a24a/" },
@@ -119,14 +120,14 @@ const LandingPage = ({ showWelcome, setShowWelcome }) => {
                         href={item.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-green-400/90 hover:text-green-400 transition-colors flex items-center gap-2 hover:shadow-[0_0_10px_rgba(16,185,129,0.3)]"
+                        className="text-green-400/80 hover:text-green-300 transition-colors duration-300 flex items-center gap-3 group"
                       >
                         <motion.div
-                          className="bg-gradient-to-r from-green-500 to-teal-400 p-1 rounded-full"
+                          className="p-1.5 rounded-full bg-gradient-to-r from-green-500 to-teal-400"
                           animate={{ rotate: [0, 360] }}
                           transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
                         >
-                          <item.icon className="w-4 h-4 text-gray-900" />
+                          <item.icon className="w-5 h-5 text-gray-900" />
                         </motion.div>
                         {item.text}
                       </a>
@@ -136,7 +137,7 @@ const LandingPage = ({ showWelcome, setShowWelcome }) => {
               </div>
             </div>
             <motion.div
-              className="text-center mt-6 text-green-400/70 text-xs sm:text-sm"
+              className="text-center mt-8 text-green-400/60 text-xs sm:text-sm"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.6 }}
@@ -164,35 +165,36 @@ const ProjectPageLayout = () => (
     <main className="flex flex-col relative z-10">
       <ProjectDetails />
     </main>
-    <footer className="border-t-4 border-green-600/30 mt-12 xs:mt-16 px-4 sm:px-8 lg:px-16 py-8 bg-transparent text-green-400/90 text-xs sm:text-sm font-medium">
-      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 bg-transparent rounded-xl border border-green-600/30 p-6 sm:p-8 shadow-[0_2px_8px_rgba(16,185,129,0.2)]">
+    {/* Footer */}
+    <footer className="mt-12 xs:mt-16 px-4 sm:px-8 lg:px-16 py-12 bg-black/80 backdrop-blur-lg text-green-400/90 font-medium">
+      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 bg-gradient-to-r from-green-900/20 to-teal-900/20 rounded-2xl border border-green-600/40 p-8 sm:p-10 shadow-[0_4px_20px_rgba(16,185,129,0.3)]">
         {/* Kolom 1 */}
-        <div>
+        <div className="space-y-4">
           <motion.h3
-            className="text-green-400 text-lg sm:text-xl font-bold mb-4 flex items-center gap-2"
+            className="text-green-400 text-lg sm:text-xl font-bold flex items-center gap-3"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <Code2 className="w-5 sm:w-6 h-5 sm:h-6" />
+            <Code2 className="w-6 h-6 text-teal-400" />
             Motivasi Hari Ini
           </motion.h3>
-          <p className="text-sm sm:text-base leading-relaxed">
+          <p className="text-sm sm:text-base text-green-400/70 leading-relaxed">
             "Hidup untuk memberi arti, bukan sekadar eksistensi."
           </p>
         </div>
         {/* Kolom 2 */}
-        <div>
+        <div className="space-y-4">
           <motion.h3
-            className="text-green-400 text-lg sm:text-xl font-bold mb-4 flex items-center gap-2"
+            className="text-green-400 text-lg sm:text-xl font-bold flex items-center gap-3"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <Code2 className="w-5 sm:w-6 h-5 sm:h-6" />
+            <Code2 className="w-6 h-6 text-teal-400" />
             Sedang Kupelajari
           </motion.h3>
-          <ul className="space-y-2">
+          <ul className="space-y-3">
             {[
               { text: "Cybersecurity", href: "/about" },
               { text: "IoT dengan ESP32", href: "/about" },
@@ -205,29 +207,30 @@ const ProjectPageLayout = () => (
               >
                 <a
                   href={item.href}
-                  className="text-green-400/90 hover:text-green-400 transition-colors flex items-center gap-2 hover:shadow-[0_0_10px_rgba(16,185,129,0.3)]"
+                  className="text-green-400/80 hover:text-green-300 transition-colors duration-300 flex items-center gap-2 group"
                 >
-                  <span className="text-green-400">•</span> {item.text}
+                  <span className="text-teal-400 group-hover:text-teal-300 transition-colors duration-300">•</span>
+                  {item.text}
                 </a>
               </motion.li>
             ))}
           </ul>
         </div>
         {/* Kolom 3 */}
-        <div>
+        <div className="space-y-4">
           <motion.h3
-            className="text-green-400 text-lg sm:text-xl font-bold mb-4 flex items-center gap-2"
+            className="text-green-400 text-lg sm:text-xl font-bold flex items-center gap-3"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <Code2 className="w-5 sm:w-6 h-5 sm:h-6" />
+            <Code2 className="w-6 h-6 text-teal-400" />
             Hubungi Saya
           </motion.h3>
-          <ul className="space-y-2">
+          <ul className="space-y-3">
             {[
-              { icon: Github, text: "github.com/rifki", href: "https://github.com/rifki" },
-              { icon: Linkedin, text: "linkedin.com/in/rifki", href: "https://linkedin.com/in/rifki" },
+              { icon: Github, text: "github.com/rifki", href: "https://github.com/mrifkinuryasin" },
+              { icon: Linkedin, text: "linkedin.com/in/rifki", href: "https://www.linkedin.com/in/muhammad-rifki-nuryasin-75272a24a/" },
             ].map((item, index) => (
               <motion.li
                 key={index}
@@ -238,14 +241,14 @@ const ProjectPageLayout = () => (
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-green-400/90 hover:text-green-400 transition-colors flex items-center gap-2 hover:shadow-[0_0_10px_rgba(16,185,129,0.3)]"
+                  className="text-green-400/80 hover:text-green-300 transition-colors duration-300 flex items-center gap-3 group"
                 >
                   <motion.div
-                    className="bg-gradient-to-r from-green-500 to-teal-400 p-1 rounded-full"
+                    className="p-1.5 rounded-full bg-gradient-to-r from-green-500 to-teal-400"
                     animate={{ rotate: [0, 360] }}
                     transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
                   >
-                    <item.icon className="w-4 h-4 text-gray-900" />
+                    <item.icon className="w-5 h-5 text-gray-900" />
                   </motion.div>
                   {item.text}
                 </a>
@@ -255,12 +258,12 @@ const ProjectPageLayout = () => (
         </div>
       </div>
       <motion.div
-        className="text-center mt-6 text-green-400/70 text-xs sm:text-sm"
+        className="text-center mt-8 text-green-400/60 text-xs sm:text-sm"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.6 }}
       >
-        © 2025 Rifki. All rights reserved.
+        © 2025 Rafi. All rights reserved.
       </motion.div>
     </footer>
   </div>
@@ -308,7 +311,7 @@ function CustomCursor() {
       className={`custom-cursor ${hovered ? 'custom-cursor-hover' : ''} hidden sm:block`}
       style={{
         left: `${position.x}px`,
-        top: `${position.y}px`,
+        top: '50px',
         background: 'radial-gradient(circle, rgba(16, 185, 129, 0.7) 20%, transparent 70%)',
         boxShadow: '0 0 15px rgba(16, 185, 129, 0.5)',
       }}
