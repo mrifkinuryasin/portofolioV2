@@ -27,17 +27,7 @@ const NotFound = () => {
 
   return (
     <>
-      <Helmet>
-        <title>404 - Halaman Tidak Ditemukan | Nugra.my.id</title>
-        <meta name="description" content="Oops! Halaman yang Anda cari tidak ada." />
-        <meta name="keywords" content="404, Tidak Ditemukan, Nugra.my.id, Halaman Error" />
-        <meta property="og:title" content="404 - Halaman Tidak Ditemukan | Nugra.my.id" />
-        <meta property="og:description" content="Oops! Halaman yang Anda cari tidak ada." />
-        <meta property="og:url" content="https://nugra.my.id/404" />
-        <meta property="og:type" content="website" />
-        <link rel="canonical" href="https://nugra.my.id/404" />
-        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-      </Helmet>
+
 
       <section className="min-h-screen flex items-center justify-center bg-gray-950 px-4 sm:px-6 md:px-8 font-mono">
         <motion.div
