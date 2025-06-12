@@ -14,6 +14,9 @@ import WelcomeScreen from "./Pages/WelcomeScreen";
 // import Dashboard from "./Pages/Dashboard";
 import { AnimatePresence, motion } from 'framer-motion';
 import { Github, Linkedin, Code2 } from 'lucide-react';
+// eror -------- Untuk saat link tidak ada maka kaan memunculkan halaman ini 
+import NotFound from "./NotFound.jsx";
+
 
 const LandingPage = ({ showWelcome, setShowWelcome }) => {
   return (
@@ -323,21 +326,27 @@ function App() {
   const [showWelcome, setShowWelcome] = useState(true);
 
   return (
-    <div className="w-full min-h-screen bg-black overflow-x-hidden">
+    <div className="w-full min-h-screen overflow-x-hidden">
       <CustomCursor />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<LandingPage showWelcome={showWelcome} setShowWelcome={setShowWelcome} />} />
+          <Route
+            path="/"
+            element={<LandingPage showWelcome={showWelcome} setShowWelcome={setShowWelcome} />}
+          />
+          <Route path="/about" element={<About />} />
+          <Route path="/portfolio" element={<Portofolio />} />
+          <Route path="/contact" element={<ContactPage />} />
+          {/* <Route path="/pengalaman" element={<Pengalaman />} /> */}
+          <Route path="/project/:id" element={<ProjectPageLayout />} />
           {/* <Route path="/login" element={<LoginPage />} /> */}
           {/* <Route path="/dashboard" element={<Dashboard />} /> */}
-          <Route path="/project/:id" element={<ProjectPageLayout />} />
-          {/* <Route path="/pengalaman" element={<Pengalaman />} /> */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </div>
   );
 }
-
 export default App;
 
 <style jsx>{`
