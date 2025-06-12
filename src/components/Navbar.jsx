@@ -94,7 +94,7 @@ const Navbar = () => {
               className="text-2xl font-extrabold text-green-400 animate-typing"
               style={{ textShadow: "0 0 10px rgba(16, 185, 129, 0.5)" }}
             >
-              Rifki
+              Rifki Nuryasin
             </a>
           </div>
 

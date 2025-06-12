@@ -170,13 +170,13 @@ const AboutPage = () => {
                   </span>
                 </h2>
                 <p
-                  className="text-sm xs:text-base sm:text-lg md:text-xl text-green-400/90 leading-relaxed text-justify"
+                  className="indent-8 text-sm xs:text-base sm:text-lg md:text-xl text-green-400/90 leading-relaxed text-justify"
                   data-aos="fade-left"
                   data-aos-duration="1500"
                 >
-                  Halo, saya Muhammad Rifki Nuryasin — mahasiswa tingkat akhir Teknik Komputer di Universitas Teknologi Digital Indonesia (UTDI) <br />
-                   memiliki ketertarikan kuat pada IoT, pengembangan aplikasi mobile, dan sistem data real-time.Saya juga memiliki minat yang besar <br />
-                    di bidang cybersecurity, khususnya pada Digital Forensic, serta tertarik pada pengembangan frontend. Saya percaya bahwa teknologi <br />
+                  Halo, saya Muhammad Rifki Nuryasin — mahasiswa tingkat akhir Teknik Komputer di Universitas Teknologi Digital Indonesia (UTDI) 
+                   memiliki ketertarikan kuat pada IoT, pengembangan aplikasi mobile, dan sistem data real-time.Saya juga memiliki minat yang besar 
+                    di bidang cybersecurity, khususnya pada Digital Forensic, serta tertarik pada pengembangan frontend. Saya percaya bahwa teknologi 
                      harus mampu menyederhanakan sistem yang kompleks, aman digunakan, dan memberikan nilai nyata bagi penggunanya.
                 </p>
                 <div

@@ -59,7 +59,7 @@ const LandingPage = ({ showWelcome, setShowWelcome }) => {
                   Motivasi Hari Ini
                 </motion.h3>
                 <p className="text-sm sm:text-base leading-relaxed">
-                  "Code with passion, learn with curiosity, and build the future."
+                  "Hidup untuk memberi arti, bukan sekadar eksistensi."
                 </p>
               </div>
               {/* Kolom 2 */}
@@ -178,7 +178,7 @@ const ProjectPageLayout = () => (
             Motivasi Hari Ini
           </motion.h3>
           <p className="text-sm sm:text-base leading-relaxed">
-            "Code with passion, learn with curiosity, and build the future."
+            "Hidup untuk memberi arti, bukan sekadar eksistensi."
           </p>
         </div>
         {/* Kolom 2 */}
