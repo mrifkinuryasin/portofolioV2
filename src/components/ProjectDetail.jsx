@@ -124,7 +124,7 @@ const ProjectDetails = () => {
 
   return (
     <section className="min-h-screen px-2 sm:px-6 lg:px-12 py-16 sm:py-24 relative overflow-hidden bg-transparent">
-      <div className="max-w-7xl w-full mx-auto bg-transparent rounded-2xl border border-green-600/30 p-6 sm:p-10 shadow-[0_4px_16px_rgba(16,185,129,0.2)] relative">
+      <div className="max-w-7xl w-full mx-auto bg-transparent rounded-2xl border border-green-600/30 p-6 sm:p-10  relative">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(16,185,129,0.1),transparent_70%)] pointer-events-none" />
 
         {/* Header */}
