@@ -107,8 +107,8 @@ const LandingPage = ({ showWelcome, setShowWelcome }) => {
                 </motion.h3>
                 <ul className="space-y-2">
                   {[
-                    { icon: Github, text: "github.com/rifki", href: "https://github.com/rifki" },
-                    { icon: Linkedin, text: "linkedin.com/in/rifki", href: "https://linkedin.com/in/rifki" },
+                    { icon: Github, text: "github.com/rifki", href: "https://github.com/mrifkinuryasin" },
+                    { icon: Linkedin, text: "linkedin.com/in/rifki", href: "https://www.linkedin.com/in/muhammad-rifki-nuryasin-75272a24a/" },
                   ].map((item, index) => (
                     <motion.li
                       key={index}

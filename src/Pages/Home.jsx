@@ -39,12 +39,12 @@ const SocialLink = memo(({ icon: Icon, link }) => (
 // Data
 const WORDS = [
   "Data Analyst",
-  "Forensic Specialist",
+  "Digital Forensic",
   "Problem Solver",
-  "Tech Innovator",
+  "Web Developer",
   "Analytical Thinker",
   "Data Visualizer",
-  "Cybersecurity Analyst",
+  "Cybersecurity",
   "Passionate Learner",
   "Rifki — Insights",
 ];
