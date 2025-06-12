@@ -7,7 +7,7 @@ import "aos/dist/aos.css";
 const MainTitle = memo(() => (
   <div className="space-y-3" data-aos="fade-up" data-aos-delay="400">
     <h1 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-teal-400 drop-shadow-[0_2px_4px_rgba(16,185,129,0.5)]">
-      RIFKI
+      RIFKI NURYASIN
     </h1>
   </div>
 ));
@@ -121,14 +121,14 @@ const Home = () => {
           >
              A dedicated and analytical thinker with a passion for uncovering insights from data, solving complex problems, and driving innovation through technology.
           </p>
-          <div
+          {/* <div
             className="flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-4"
             data-aos="fade-up"
             data-aos-delay="1000"
           >
             <CTAButton href="#" text="Download CV" />
             <CTAButton href="#" text="View Projects" />
-          </div>
+          </div> */}
           <div
             className="flex gap-3 sm:gap-4 justify-center lg:justify-start mt-4"
             data-aos="fade-up"
