@@ -99,7 +99,7 @@ const ContactFooter = () => {
 
   return (
     <>
-      <Helmet>
+      {/* <Helmet>
         <title>Contact – Rifki.my.id</title>
         <meta
           name="description"
@@ -117,7 +117,7 @@ const ContactFooter = () => {
         <meta property="og:url" content="https://rifki.my.id/contact" />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://rifki.my.id/contact" />
-      </Helmet>
+      </Helmet> */}
 
       <footer
         id="contact"

@@ -13,35 +13,17 @@ const TypewriterEffect = ({ text }) => {
       } else {
         clearInterval(timer);
       }
-    }, 90);
+    }, 100);
     return () => clearInterval(timer);
   }, [text]);
 
   return (
-    <span className="font-mono text-green-400 tracking-wider">
+    <span className="font-mono text-green-300 text-sm sm:text-base tracking-wide">
       {displayText}
-      <span className="animate-pulse text-green-400">|</span>
+      <span className="animate-pulse text-green-300">|</span>
     </span>
   );
 };
-
-const AuroraBackground = () => (
-  <div className="absolute inset-0 -z-10">
-    <div className="w-full h-full bg-gray-900 bg-opacity-80" />
-    <div className="absolute w-[500px] h-[500px] bg-green-500 rounded-full blur-3xl opacity-30 animate-float top-10 left-10" />
-    <div className="absolute w-[400px] h-[400px] bg-teal-400 rounded-full blur-2xl opacity-20 animate-float-slow bottom-10 right-10" />
-  </div>
-);
-
-const IconButton = ({ Icon }) => (
-  <motion.div
-    whileHover={{ scale: 1.1, rotate: 5 }}
-    transition={{ type: "spring", stiffness: 300 }}
-    className="relative p-3 bg-gray-800 bg-opacity-60 backdrop-blur-md rounded-full border border-green-600 shadow-lg"
-  >
-    <Icon className="text-green-400 w-5 h-5 sm:w-6 sm:h-6" />
-  </motion.div>
-);
 
 const WelcomeScreen = ({ onLoadingComplete }) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -54,7 +36,7 @@ const WelcomeScreen = ({ onLoadingComplete }) => {
         clearInterval(interval);
         return 100;
       });
-    }, 40);
+    }, 50);
     return () => clearInterval(interval);
   }, []);
 
@@ -62,7 +44,7 @@ const WelcomeScreen = ({ onLoadingComplete }) => {
     if (progress === 100) {
       setTimeout(() => {
         setIsLoading(false);
-        setTimeout(() => onLoadingComplete?.(), 1000);
+        setTimeout(() => onLoadingComplete?.(), 800);
       }, 500);
     }
   }, [progress, onLoadingComplete]);
@@ -71,75 +53,76 @@ const WelcomeScreen = ({ onLoadingComplete }) => {
     <AnimatePresence>
       {isLoading && (
         <motion.div
-          className="fixed inset-0 bg-gray-900 text-gray-100 z-50"
+          className="fixed inset-0 bg-gray-950 text-gray-100 z-50 flex items-center justify-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{
             opacity: 0,
-            y: 50,
-            filter: 'blur(10px)',
-            transition: { duration: 0.8 }
+            scale: 0.95,
+            transition: { duration: 0.8, ease: 'easeInOut' },
           }}
         >
-          <AuroraBackground />
-          <div className="min-h-screen flex items-center justify-center px-6">
+          {/* Background Glow */}
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(16,185,129,0.15)_0%,transparent_70%)]" />
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            className="text-center space-y-6 sm:space-y-8 max-w-lg mx-auto px-4"
+          >
+            {/* Loading Indicator */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: 'easeOut' }}
-              className="text-center space-y-8 max-w-2xl mx-auto"
+              className="relative w-16 h-16 sm:w-20 sm:h-20 mx-auto"
+              animate={{ rotate: 360 }}
+              transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
             >
-              {/* Flowing Animation */}
+              <div className="absolute inset-0 border-4 border-green-400/30 rounded-full" />
               <motion.div
-                className="flex justify-center space-x-2"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.5 }}
-              >
-                {[...Array(5)].map((_, index) => (
-                  <motion.div
-                    key={index}
-                    className="w-2 h-12 bg-gradient-to-b from-green-500 to-teal-400 rounded-full"
-                    animate={{
-                      y: [0, -20, 0],
-                      opacity: [0.3, 1, 0.3],
-                    }}
-                    transition={{
-                      duration: 1.5,
-                      repeat: Infinity,
-                      delay: index * 0.2,
-                      ease: 'easeInOut',
-                    }}
-                  />
-                ))}
-              </motion.div>
-
-              {/* Progress Text */}
+                className="absolute inset-0 border-t-4 border-green-400 rounded-full"
+                animate={{ rotate: -360 }}
+                transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
+              />
               <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1 }}
-                className="text-lg text-green-400 font-medium tracking-wide"
+                className="absolute inset-3 bg-gradient-to-r from-green-500 to-teal-400 rounded-full flex items-center justify-center"
+                animate={{ scale: [1, 1.1, 1] }}
+                transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
               >
-                Loading... {progress}%
-              </motion.div>
-
-              {/* Website Link */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-              >
-                {/* <a
-                  href="https://www.rifki.my.id"
-                  className="inline-flex items-center gap-3 px-6 py-3 bg-gray-800 bg-opacity-60 border border-green-600 rounded-full shadow-lg hover:shadow-xl transition hover:scale-105"
-                >
-                  <IconButton Icon={Globe} />
-                  <TypewriterEffect text="www.rifki.my.id" />
-                </a> */}
+                <Globe className="w-6 h-6 sm:w-8 sm:h-8 text-gray-900" />
               </motion.div>
             </motion.div>
-          </div>
+
+            {/* Progress Text */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+              className="text-base sm:text-lg text-green-300 font-semibold tracking-wide"
+            >
+              Memuat... {Math.floor(progress)}%
+            </motion.div>
+
+            {/* Website Link */}
+            <motion.a
+              href="https://www.rifki.my.id"
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.6 }}
+              className="inline-flex items-center gap-3 px-6 py-3 bg-gray-900/60 backdrop-blur-md border border-green-600/40 rounded-lg shadow-[0_4px_12px_rgba(16,185,129,0.2)] hover:shadow-[0_6px_16px_rgba(16,185,129,0.4)] transition-all duration-300 hover:scale-105"
+              aria-label="Kunjungi situs rifki.my.id"
+            >
+              <motion.div
+                whileHover={{ scale: 1.2 }}
+                transition={{ type: 'spring', stiffness: 300 }}
+                className="p-2 bg-gradient-to-r from-green-500 to-teal-400 rounded-full"
+              >
+                <Globe className="w-4 h-4 sm:w-5 sm:h-5 text-gray-900" />
+              </motion.div>
+              <TypewriterEffect text="www.rifki.my.id" />
+            </motion.a>
+          </motion.div>
         </motion.div>
       )}
     </AnimatePresence>

@@ -106,7 +106,7 @@ const Portfolio = () => {
       className="px-4 sm:px-6 lg:px-8 py-12 scroll-mt-24 relative overflow-hidden"
       id="Portofolio"
     >
-      <Helmet>
+      {/* <Helmet>
         <title>Portfolio – Nugra.my.id</title>
         <meta
           name="description"
@@ -124,7 +124,7 @@ const Portfolio = () => {
         <meta property="og:url" content="https://nugra.my.id/portfolio" />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://nugra.my.id/portfolio" />
-      </Helmet>
+      </Helmet> */}
 
       {/* Header */}
       <div className="text-center mb-8 relative z-10">

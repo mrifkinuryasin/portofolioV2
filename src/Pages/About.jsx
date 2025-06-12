@@ -132,7 +132,7 @@ const AboutPage = () => {
 
   return (
     <>
-      <Helmet>
+      {/* <Helmet>
         <title>About – Rifki.my.id</title>
         <meta name="description" content="Tentang Rifki dan perjalanan profesionalnya." />
         <meta name="keywords" content="Rifki, Portfolio, Web Developer, Cybersecurity, Tentang Saya" />
@@ -141,7 +141,7 @@ const AboutPage = () => {
         <meta property="og:url" content="https://rifki.my.id/about" />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://rifki.my.id/about" />
-      </Helmet>
+      </Helmet> */}
 
       <section
         className="min-h-screen text-green-400  overflow-hidden px-4 sm:px-6 md:px-8 lg:px-12 pt-20 sm:pt-24 pb-12 relative"
